@@ -70,4 +70,7 @@ for (row in 1:nrow((lodowki))){
 }
 lodowki$status_opinii
 
+paste(lodowki$nazwa, " ma ocenê klientów ", lodowki$ocena, " bo ma liczbê opinii ", lodowki$liczba_opinii)
 
+write.csv(lodowki, "~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab01/lodowki.csv")
+read.csv("~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab01/lodowki.csv")
