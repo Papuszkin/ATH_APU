@@ -1,0 +1,587 @@
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> a < 4*sin(pi)
+Error: object 'a' not found
+> a <- 4*sin(pi)
+> b <- a * 3
+> max(a, b)
+[1] 1.469528e-15
+> man(max)
+Error in man(max) : could not find function "man"
+> help(max)
+> vecA <- 90:115
+> sum(vecA^2)/length((vecA))
+[1] 10562.5
+> apropos("max", mode = "function")
+ [1] "cummax"       "max"          "max.col"      "mem.maxNSize" "mem.maxVSize" "pmax"        
+ [7] "pmax.int"     "promax"       "varimax"      "which.max"   
+> setwd("~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab01")
+> a <- "lodówka z największą pojemnością"
+> save(a, file="aCopy.RData")
+> remove(a)
+> a
+Error: object 'a' not found
+> load(aCopy.RData)
+Error in load(aCopy.RData) : object 'aCopy.RData' not found
+> load("aCopy.RData")
+> a
+[1] "lodówka z największą pojemnością"
+> 
+> 
+> 
+> install.packages("gridExtra")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+instalowanie dodatkowych zależności ‘gtable’
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/gtable_0.3.0.zip'
+Content type 'application/zip' length 434366 bytes (424 KB)
+downloaded 424 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/gridExtra_2.3.zip'
+Content type 'application/zip' length 1109491 bytes (1.1 MB)
+downloaded 1.1 MB
+
+package ‘gtable’ successfully unpacked and MD5 sums checked
+package ‘gridExtra’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\pk052846\AppData\Local\Temp\RtmpWcdrR5\downloaded_packages
+> install.packages("gridExtra")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/gridExtra_2.3.zip'
+Content type 'application/zip' length 1109491 bytes (1.1 MB)
+downloaded 1.1 MB
+
+package ‘gridExtra’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\pk052846\AppData\Local\Temp\RtmpWcdrR5\downloaded_packages
+> install.packages("gridExtra")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/gridExtra_2.3.zip'
+Content type 'application/zip' length 1109491 bytes (1.1 MB)
+downloaded 1.1 MB
+
+package ‘gridExtra’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\pk052846\AppData\Local\Temp\RtmpWcdrR5\downloaded_packages
+> library(gridExtra)
+> help(package = "gridExtra")
+> grid.table(rivers[1:10, ])
+Error in rivers[1:10, ] : incorrect number of dimensions
+> grid.table(rivers)
+> grid.table(rivers[1:10])
+> grid.table(rivers[1:10])
+> seq(1000, 850, 2)
+Error in seq.default(1000, 850, 2) : błędny znak w argumencie 'by'
+> seq(1000, 850, -2)
+ [1] 1000  998  996  994  992  990  988  986  984  982  980  978  976  974  972  970  968  966  964
+[20]  962  960  958  956  954  952  950  948  946  944  942  940  938  936  934  932  930  928  926
+[39]  924  922  920  918  916  914  912  910  908  906  904  902  900  898  896  894  892  890  888
+[58]  886  884  882  880  878  876  874  872  870  868  866  864  862  860  858  856  854  852  850
+> a <- 30:5
+> b <- 11:23
+> d <- c(b,a)
+> d
+ [1] 11 12 13 14 15 16 17 18 19 20 21 22 23 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12
+[33] 11 10  9  8  7  6  5
+> nazwa <- ("Whirlpool WQ9 B2L", "LG GBB72MCDGN", "Indesit LI7 SN1E X", "Whirlpool W7 821O K", "Samsung RB38T603CS9", "LG GSJ761MCUZ", "LG GBB61BLHMN", "Haier 3-drzwiowa HTR5619ENMP", "Samsung RB29FWJNDBC", "Samsung RS50N3913BC", "Samsung RB29FERNCSS", "LG GSJ361DIDV", "Whirlpool W4D7 XC2", "Indesit LI8 S1E K", "Samsung RB34T672DBN")
+Error: unexpected ',' in "nazwa <- ("Whirlpool WQ9 B2L","
+> nazwa <- c("Whirlpool WQ9 B2L", "LG GBB72MCDGN", "Indesit LI7 SN1E X", "Whirlpool W7 821O K", "Samsung RB38T603CS9", "LG GSJ761MCUZ", "LG GBB61BLHMN", "Haier 3-drzwiowa HTR5619ENMP", "Samsung RB29FWJNDBC", "Samsung RS50N3913BC", "Samsung RB29FERNCSS", "LG GSJ361DIDV", "Whirlpool W4D7 XC2", "Indesit LI8 S1E K", "Samsung RB34T672DBN")
+> pojemnosc_uzytkowa_chlodziarki <- c("388", "277", "197", "239", "276", "411", "324", "234", "212", "360")
+> nazwa <- c("Whirlpool WQ9 B2L", "LG GBB72MCDGN", "Indesit LI7 SN1E X", "Whirlpool W7 821O K", "Samsung RB38T603CS9", "LG GSJ761MCUZ", "LG GBB61BLHMN", "Haier 3-drzwiowa HTR5619ENMP", "Samsung RB29FWJNDBC", "Samsung RS50N3913BC")
+> pojemnosc_uzytkowa_zamrazarki <- c("206", "107", "98", "104", "114", "214", "107", "114", "108", "175")
+> cena <= c("4470,69", "2438,19", "1299,99", "1747,14", "2999,00", "4633,29", "2031,69", "2925,99", "1828,44", "4470,69")
+Error: object 'cena' not found
+> cena <- c("4470,69", "2438,19", "1299,99", "1747,14", "2999,00", "4633,29", "2031,69", "2925,99", "1828,44", "4470,69")
+> liczba_opinii <- c("27", "10", "30", "122", "146", "153", "129", "56", "46", "76")
+> 
+> 
+> lodowki <- data.frame(nazwa, pojemnosc_uzytkowa_chlodziarki, pojemnosc_uzytkowa_zamrazarki, cena, liczba_opinii, stringsAsFactors = FALSE)
+> pojemnosc_uzytkowa_chlodziarki <- c(388, 277, 197, 239, 276, 411, 324, 234, 212, 360)
+> 
+> pojemnosc_uzytkowa_chlodziarki <- c(388, 277, 197, 239, 276, 411, 324, 234, 212, 360)
+> pojemnosc_uzytkowa_zamrazarki <- c(206, 107, 98, 104, 114, 214, 107, 114, 108, 175)
+> cena <- c(4470.69, 2438.19, 1299.99, 1747.14, 2999.00, 4633.29, 2031.69, 2925.99, 1828.44, 4470.69)
+> liczba_opinii <- c(27, 10, 30, 122, 146, 153, 129, 56, 46, 76)
+> lodowki <- data.frame(nazwa, pojemnosc_uzytkowa_chlodziarki, pojemnosc_uzytkowa_zamrazarki, cena, liczba_opinii, stringsAsFactors = FALSE)
+> 
+> lodowki <- data.frame(nazwa, pojemnosc_uzytkowa_chlodziarki, pojemnosc_uzytkowa_zamrazarki, cena, liczba_opinii, stringsAsFactors = FALSE)
+> mean(lodowki$cena)
+[1] 2884.511
+> 
+> nowa_lodowka <- data.frame(nazwa = "Samsung RB29FERNCSS
++ ", pojemnosc_uzytkowa_chlodziarki = 194, pojemnosc_uzytkowa_zamrazarki = 108, cena = 1787.79, liczba_opinii = 703)
+> 
+> nowa_lodowka <- data.frame(nazwa = "Samsung RB29FERNCSS", pojemnosc_uzytkowa_chlodziarki = 194, pojemnosc_uzytkowa_zamrazarki = 108, cena = 1787.79, liczba_opinii = 703)
+> lodowki <- rbind(lodowki, nowa_lodowka)
+> 
+> ocena <- c(5, 5, 5, 4.5, 5, 5, 5, 5, 4.5, 5)
+> lodowki <- cbind(lodowki, ocena)
+Error in data.frame(..., check.names = FALSE) : 
+  argumenty sugerują różną liczbę wierszy: 11, 10
+> ocena <- c(5, 5, 5, 4.5, 5, 5, 5, 5, 4.5, 5, 5)
+> 
+> 
+> lodowki <- cbind(lodowki, ocena)
+> tapply(lodowki$cena, lodowki$ocena, mean)
+     4.5        5 
+1787.790 3006.369 
+> 
+> 
+> noweNazwa = c("LG GSJ361DIDV", "Whirlpool W4D7 XC2", "Indesit LI8 S1E K", "Samsung RB34T672DBN");
+> 
+> 
+> nazwa = c("LG GSJ361DIDV", "Whirlpool W4D7 XC2", "Indesit LI8 S1E K", "Samsung RB34T672DBN")
+> pojemnosc_uzytkowa_chlodziarki = c(400, 302, 228, 230)
+> pojemnosc_uzytkowa_zamrazarki = c(206, 150, 111, 114)
+> cena <- c(3901.59, 2925.99, 1259.34, 1950.39)
+> liczba_opinii = c(371, 13, 27, 126)
+> ocena <- c(5, 5, 5, 5)
+> nowe_lodowki <- data.frame(nazwa, pojemnosc_uzytkowa_chlodziarki, pojemnosc_uzytkowa_zamrazarki, cena, liczba_opinii, stringsAsFactors = FALSE)
+> lodowki <- rbind(lodowki, nowe_lodowki)
+Error in rbind(deparse.level, ...) : 
+  liczba kolumn argumentów nie zgadza się
+> nowe_lodowki <- data.frame(nazwa, pojemnosc_uzytkowa_chlodziarki, pojemnosc_uzytkowa_zamrazarki, cena, liczba_opinii, ocena, stringsAsFactors = FALSE)
+> lodowki <- rbind(lodowki, nowe_lodowki)
+> 
+> oceny_wykres <- table(lodowki$ocena)
+> oceny_wykres
+
+4.5   5 
+  2  13 
+> barplot(oceny_wykres)
+> oceny_procenty <- oceny_wykres / sum(oceny_wykres)
+> pie(oceny_procenty)
+> library(plotrix)
+Error in library(plotrix) : nie ma pakietu o nazwie ‘plotrix’
+> install.packages("plotrix")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/plotrix_3.8-2.zip'
+Content type 'application/zip' length 1139092 bytes (1.1 MB)
+downloaded 1.1 MB
+
+package ‘plotrix’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\pk052846\AppData\Local\Temp\RtmpWcdrR5\downloaded_packages
+> library(plotrix)
+> fan.plot(oceny_procenty, labels=names(oceny_wykres))
+> fan.plot(oceny_procenty, labels=names(oceny_wykres))
+> 
+> 
+> 
+> 
+> 
+> 
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50, "mniej niż 50 opinii")
+Error in ifelse(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50,  : 
+  argument "no" is missing, with no default
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50, "mniej niż 50 opinii", "")
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii = 0, "nie ma", "")
+Error: unexpected '=' in "lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii ="
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii == 0, "nie ma", "")
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii == 0, "nie ma", NA)
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50, "mniej niż 50 opinii", "")
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii == 0, "nie ma", pass)
+Error in ifelse(lodowki$liczba_opinii == 0, "nie ma", pass) : 
+  object 'pass' not found
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50, "mniej niż 50 opinii", NA)
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" NA                   
+ [5] NA                    NA                    NA                    NA                   
+ [9] "mniej niż 50 opinii" NA                    NA                    NA                   
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" NA                   
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50, "mniej niż 50 opinii")
+Error in ifelse(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50,  : 
+  argument "no" is missing, with no default
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50, "mniej niż 50 opinii")
+Error: unexpected ',' in "lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50,"
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50){ "mniej niż 50 opinii" }
+Warning message:
+In if (lodowki$liczba_opinii > 0 & lodowki$liczba_opinii < 50) { :
+  the condition has length > 1 and only the first element will be used
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 0 && lodowki$liczba_opinii < 50){ "mniej niż 50 opinii" }
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii == 0){ "nie ma" }
+Warning message:
+In if (lodowki$liczba_opinii == 0) { :
+  the condition has length > 1 and only the first element will be used
+> lodowki$status_opinii
+NULL
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 0 && lodowki$liczba_opinii < 50){ "mniej niż 50 opinii" }
+> lodowki[, "status_opinii"] <- if(Any(lodowki$liczba_opinii == 0)){ "nie ma" }
+Error in Any(lodowki$liczba_opinii == 0) : could not find function "Any"
+> lodowki[, "status_opinii"] <- if(any(lodowki$liczba_opinii == 0)){ "nie ma" }
+> lodowki$status_opinii
+NULL
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii == 0 || lodowki$liczba_opinii < 0){ "nie ma" }
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii == 0){ "nie ma" }
+Warning message:
+In if (lodowki$liczba_opinii == 0) { :
+  the condition has length > 1 and only the first element will be used
+> lodowki[, "status_opinii"] <- if(any(lodowki$liczba_opinii == 0)){ "nie ma" }
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 0 && lodowki$liczba_opinii < 50){ "mniej niż 50 opinii" }
+> lodowki[, "status_opinii"] <- if(any(lodowki$liczba_opinii == 0)){ "nie ma" }
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 0 && lodowki$liczba_opinii < 50){ "mniej niż 50 opinii" }
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 100){ "więcej niż 100 opinii" }
+Warning message:
+In if (lodowki$liczba_opinii > 100) { :
+  the condition has length > 1 and only the first element will be used
+> lodowki[, "status_opinii"] <- if(any(lodowki$liczba_opinii > 100)){ "więcej niż 100 opinii" }
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 0 && lodowki$liczba_opinii < 50){ "mniej niż 50 opinii" }
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii >= 50 && lodowki$liczba_opinii <= 100){ "50-100 opinii" }
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii > 0 && lodowki$liczba_opinii < 50){ "mniej niż 50 opinii" }
+> lodowki[, "status_opinii"] <- if(lodowki$liczba_opinii >= 50 && lodowki$liczba_opinii <= 100){ "50-100 opinii" }
+> lodowki$status_opinii
+NULL
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii == 0, "nie ma", ifelse(lodowki$liczba_opinii > 0 && lodowki$liczba_opinii < 50, "mniej niż 50 opinii", NA))
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii < 1, "nie ma", ifelse(lodowki$liczba_opinii > 0 && lodowki$liczba_opinii < 50, "mniej niż 50 opinii", NA))
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii < 1, "nie ma", ifelse(lodowki$liczba_opinii > 0 && lodowki$liczba_opinii < 50, "mniej niż 50 opinii", "NA"))
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+> lodowki[, "status_opinii"] <- ifelse(lodowki$liczba_opinii < 1, "nie ma", ifelse(lodowki$liczba_opinii > 1 && lodowki$liczba_opinii < 50, "mniej niż 50 opinii", "NA"))
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+> for (row in 1:nrow((lodowki))){
++   liczba <- lodowki[row, "liczba_opinii"]
++   
++   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   }
++ }
+> for (row in 1:nrow((lodowki))){
++   liczba <- lodowki[row, "liczba_opinii"]
++   
++   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   }
++   else if(liczba > 0 && liczba < 50) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   }
++ }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+> for (row in 1:nrow((lodowki))){
++   liczba <- lodowki[row, "liczba_opinii"]
++   
++   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   }
++   if(liczba > 0 && liczba < 50) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   }
++ }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+> for (row in 1:nrow((lodowki))){
++   liczba <- lodowki[row, "liczba_opinii"]
++   
++   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   }
++   if(liczba > 0 & liczba < 50) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   }
++ }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+> for (row in 1:nrow((lodowki))){
++   liczba <- lodowki[row, "liczba_opinii"]
++   
++   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   }
++   else if(liczba > 0 & liczba < 50) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   }
++   else if(liczba > 50 & liczba < 100) {
++     lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
++   }
++   else if(liczba > 100) {
++     lodowki[row, "liczba_opinii"] <- "wiecej niż 100 opinii"
++   }
++ }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+> for (row in 1:nrow((lodowki))){
++   liczba <- lodowki[row, "liczba_opinii"]
++   
++   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   }
++   else if(liczba > 0 && liczba < 50) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   }
++   else if(liczba > 50 && liczba < 100) {
++     lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
++   }
++   else if(liczba > 100) {
++     lodowki[row, "liczba_opinii"] <- "wiecej niż 100 opinii"
++   }
++ }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+> for (row in 1:nrow((lodowki))){
++   liczba <- lodowki[row, "liczba_opinii"]
++   
++   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   } else if(liczba > 0 && liczba < 50) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   } else if(liczba > 50 && liczba < 100) {
++     lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
++   } else if(liczba > 100) {
++     lodowki[row, "liczba_opinii"] <- "wiecej niż 100 opinii"
++   }
++ }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+>   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   } else if(liczba > 0 && liczba < 50) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   } else if(liczba > 50 && liczba < 100) {
++     lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
++   } else {
++     lodowki[row, "liczba_opinii"] <- "wiecej niż 100 opinii"
++   }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+>   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   } else if(liczba > 0 & liczba < 50) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   } else if(liczba > 50 & liczba < 100) {
++     lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
++   } else {
++     lodowki[row, "liczba_opinii"] <- "wiecej niż 100 opinii"
++   }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+>   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   } else if(liczba > 0 & liczba < 50) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   } else if(liczba > 50 & liczba < 100) {
++     lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
++   } else {
++     lodowki[row, "liczba_opinii"] <- "wiecej niż 100 opinii"
++   }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+>   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   } else if(liczba > 0) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   } else if(liczba > 50) {
++     lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
++   } else id (liczba > 100) {
+Error: unexpected '{' in:
+"    lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
+  } else id (liczba > 100) {"
+>     lodowki[row, "liczba_opinii"] <- "wiecej niż 100 opinii"
+>   }
+Error: unexpected '}' in "  }"
+>   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   } else if(liczba > 0) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   } else if(liczba > 50) {
++     lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
++   } else if (liczba > 100) {
++     lodowki[row, "liczba_opinii"] <- "wiecej niż 100 opinii"
++   }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [5] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+ [9] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+[13] "mniej niż 50 opinii" "mniej niż 50 opinii" "mniej niż 50 opinii"
+>   liczba
+[1] "wiecej niż 100 opinii"
+> for (row in 1:nrow((lodowki))){
++   liczba <- lodowki[row, "liczba_opinii"]
++   liczba
++   
++   if (liczba == 0) {
++     lodowki[row, "liczba_opinii"] <- "Nie ma"
++   }
++   if(liczba > 0) {
++     lodowki[row, "liczba_opinii"] <- "mniej niż 50 opinii"
++   }
++   if(liczba > 50) {
++     lodowki[row, "liczba_opinii"] <- "między 50-100 opinii"
++   }
++   if (liczba > 100) {
++     lodowki[row, "liczba_opinii"] <- "wiecej niż 100 opinii"
++   }
++ }
+> liczba_opinii <- c(27, 10, 30, 122, 146, 153, 129, 56, 46, 76, 703, 371, 13, 27, 126)
+> lodowki$liczba_opinii <- liczba_opinii
+> for (row in 1:nrow((lodowki))){
++   liczba <- lodowki[row, "liczba_opinii"]
++   
++   if (liczba == 0) {
++     lodowki[row, "status_opinii"] <- "Nie ma"
++   } else if(liczba > 0 && liczba < 50) {
++     lodowki[row, "status_opinii"] <- "mniej niż 50 opinii"
++   } else if(liczba > 50 && liczba < 100) {
++     lodowki[row, "status_opinii"] <- "między 50-100 opinii"
++   } else {
++     lodowki[row, "status_opinii"] <- "wiecej niż 100 opinii"
++   }
++ }
+> lodowki$status_opinii
+ [1] "mniej niż 50 opinii"   "mniej niż 50 opinii"   "mniej niż 50 opinii"   "wiecej niż 100 opinii"
+ [5] "wiecej niż 100 opinii" "wiecej niż 100 opinii" "wiecej niż 100 opinii" "między 50-100 opinii" 
+ [9] "mniej niż 50 opinii"   "między 50-100 opinii"  "wiecej niż 100 opinii" "wiecej niż 100 opinii"
+[13] "mniej niż 50 opinii"   "mniej niż 50 opinii"   "wiecej niż 100 opinii"
+> paste(lodowki$nazwa, " ma ocenę klientów ", lodowki$ocena, " bo ma liczbę opinii ", lodowki$liczba_opinii)
+ [1] "Whirlpool WQ9 B2L  ma ocenę klientów  5  bo ma liczbę opinii  27"           
+ [2] "LG GBB72MCDGN  ma ocenę klientów  5  bo ma liczbę opinii  10"               
+ [3] "Indesit LI7 SN1E X  ma ocenę klientów  5  bo ma liczbę opinii  30"          
+ [4] "Whirlpool W7 821O K  ma ocenę klientów  4.5  bo ma liczbę opinii  122"      
+ [5] "Samsung RB38T603CS9  ma ocenę klientów  5  bo ma liczbę opinii  146"        
+ [6] "LG GSJ761MCUZ  ma ocenę klientów  5  bo ma liczbę opinii  153"              
+ [7] "LG GBB61BLHMN  ma ocenę klientów  5  bo ma liczbę opinii  129"              
+ [8] "Haier 3-drzwiowa HTR5619ENMP  ma ocenę klientów  5  bo ma liczbę opinii  56"
+ [9] "Samsung RB29FWJNDBC  ma ocenę klientów  4.5  bo ma liczbę opinii  46"       
+[10] "Samsung RS50N3913BC  ma ocenę klientów  5  bo ma liczbę opinii  76"         
+[11] "Samsung RB29FERNCSS  ma ocenę klientów  5  bo ma liczbę opinii  703"        
+[12] "LG GSJ361DIDV  ma ocenę klientów  5  bo ma liczbę opinii  371"              
+[13] "Whirlpool W4D7 XC2  ma ocenę klientów  5  bo ma liczbę opinii  13"          
+[14] "Indesit LI8 S1E K  ma ocenę klientów  5  bo ma liczbę opinii  27"           
+[15] "Samsung RB34T672DBN  ma ocenę klientów  5  bo ma liczbę opinii  126"        
+> 
+> 
+> paste(lodowki$nazwa, " ma ocenę klientów ", lodowki$ocena, " bo ma liczbę opinii ", lodowki$liczba_opinii)
+ [1] "Whirlpool WQ9 B2L  ma ocenę klientów  5  bo ma liczbę opinii  27"           
+ [2] "LG GBB72MCDGN  ma ocenę klientów  5  bo ma liczbę opinii  10"               
+ [3] "Indesit LI7 SN1E X  ma ocenę klientów  5  bo ma liczbę opinii  30"          
+ [4] "Whirlpool W7 821O K  ma ocenę klientów  4.5  bo ma liczbę opinii  122"      
+ [5] "Samsung RB38T603CS9  ma ocenę klientów  5  bo ma liczbę opinii  146"        
+ [6] "LG GSJ761MCUZ  ma ocenę klientów  5  bo ma liczbę opinii  153"              
+ [7] "LG GBB61BLHMN  ma ocenę klientów  5  bo ma liczbę opinii  129"              
+ [8] "Haier 3-drzwiowa HTR5619ENMP  ma ocenę klientów  5  bo ma liczbę opinii  56"
+ [9] "Samsung RB29FWJNDBC  ma ocenę klientów  4.5  bo ma liczbę opinii  46"       
+[10] "Samsung RS50N3913BC  ma ocenę klientów  5  bo ma liczbę opinii  76"         
+[11] "Samsung RB29FERNCSS  ma ocenę klientów  5  bo ma liczbę opinii  703"        
+[12] "LG GSJ361DIDV  ma ocenę klientów  5  bo ma liczbę opinii  371"              
+[13] "Whirlpool W4D7 XC2  ma ocenę klientów  5  bo ma liczbę opinii  13"          
+[14] "Indesit LI8 S1E K  ma ocenę klientów  5  bo ma liczbę opinii  27"           
+[15] "Samsung RB34T672DBN  ma ocenę klientów  5  bo ma liczbę opinii  126"        
+> write.csv(lodowki, "~/lodowki.csv")
+> write.csv(lodowki, getwd() + "~/lodowki.csv")
+Error in getwd() + "~/lodowki.csv" : 
+  non-numeric argument to binary operator
+> write.csv(lodowki, paste(getwd() + "~/lodowki.csv"))
+Error in getwd() + "~/lodowki.csv" : 
+  non-numeric argument to binary operator
+> write.csv(lodowki, "~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab01/lodowki.csv")
+> read.csv("~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab01/lodowki.csv")
+    X                        nazwa pojemnosc_uzytkowa_chlodziarki pojemnosc_uzytkowa_zamrazarki
+1   1            Whirlpool WQ9 B2L                            388                           206
+2   2                LG GBB72MCDGN                            277                           107
+3   3           Indesit LI7 SN1E X                            197                            98
+4   4          Whirlpool W7 821O K                            239                           104
+5   5          Samsung RB38T603CS9                            276                           114
+6   6                LG GSJ761MCUZ                            411                           214
+7   7                LG GBB61BLHMN                            324                           107
+8   8 Haier 3-drzwiowa HTR5619ENMP                            234                           114
+9   9          Samsung RB29FWJNDBC                            212                           108
+10 10          Samsung RS50N3913BC                            360                           175
+11 11          Samsung RB29FERNCSS                            194                           108
+12 12                LG GSJ361DIDV                            400                           206
+13 13           Whirlpool W4D7 XC2                            302                           150
+14 14            Indesit LI8 S1E K                            228                           111
+15 15          Samsung RB34T672DBN                            230                           114
+      cena liczba_opinii ocena         status_opinii
+1  4470.69            27   5.0   mniej niż 50 opinii
+2  2438.19            10   5.0   mniej niż 50 opinii
+3  1299.99            30   5.0   mniej niż 50 opinii
+4  1747.14           122   4.5 wiecej niż 100 opinii
+5  2999.00           146   5.0 wiecej niż 100 opinii
+6  4633.29           153   5.0 wiecej niż 100 opinii
+7  2031.69           129   5.0 wiecej niż 100 opinii
+8  2925.99            56   5.0  między 50-100 opinii
+9  1828.44            46   4.5   mniej niż 50 opinii
+10 4470.69            76   5.0  między 50-100 opinii
+11 1787.79           703   5.0 wiecej niż 100 opinii
+12 3901.59           371   5.0 wiecej niż 100 opinii
+13 2925.99            13   5.0   mniej niż 50 opinii
+14 1259.34            27   5.0   mniej niż 50 opinii
+15 1950.39           126   5.0 wiecej niż 100 opinii
+> 
