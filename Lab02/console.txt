@@ -1,0 +1,266 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Workspace loaded from ~/.RData]
+
+> setwd("~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab02")
+> install.packages("data.tree")
+Error in install.packages : Updating loaded packages
+> install.packages("DiagrammeR")
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/DiagrammeR_1.0.8.zip'
+Content type 'application/zip' length 2260891 bytes (2.2 MB)
+downloaded 2.2 MB
+
+package ‘DiagrammeR’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\pk052846\AppData\Local\Temp\RtmpkPIg0a\downloaded_packages
+> install.packages("formattable")
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/formattable_0.2.1.zip'
+Content type 'application/zip' length 174562 bytes (170 KB)
+downloaded 170 KB
+
+package ‘formattable’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\pk052846\AppData\Local\Temp\RtmpkPIg0a\downloaded_packages
+> install.packages("~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab02/ahp_0.2.12.tar.gz",repos=NULL,type = "source")
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+* installing *source* package 'ahp' ...
+** package 'ahp' successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+  converting help for package 'ahp'
+    finding HTML links ... done
+    AhpMatrix                               html  
+    Analyze                                 html  
+    finding level-2 HTML links ... done
+
+    Calculate                               html  
+    GetPairwiseFromFunction                 html  
+    Load                                    html  
+    PrioritiesFromPairwiseMatrixEigenvalues
+                                            html  
+    PrioritiesFromScoresDefault             html  
+    RunGUI                                  html  
+    Visualize                               html  
+    ahp                                     html  
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+*** arch - x64
+** testing if installed package can be loaded from final location
+*** arch - i386
+*** arch - x64
+** testing if installed package keeps a record of temporary installation path
+* DONE (ahp)
+> install.packages("devtools", dependencies = TRUE)
+Error in install.packages : Updating loaded packages
+> install.packages("data.tree")
+Error in install.packages : Updating loaded packages
+> install.packages("devtools", dependencies = TRUE)
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/devtools_2.4.3.zip'
+Content type 'application/zip' length 423760 bytes (413 KB)
+downloaded 413 KB
+
+package ‘devtools’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\pk052846\AppData\Local\Temp\RtmpkPIg0a\downloaded_packages
+> install.packages("data.tree")
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/data.tree_1.0.0.zip'
+Content type 'application/zip' length 1640721 bytes (1.6 MB)
+downloaded 1.6 MB
+
+package ‘data.tree’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\pk052846\AppData\Local\Temp\RtmpkPIg0a\downloaded_packages
+> library(devtools)
+Ładowanie wymaganego pakietu: usethis
+> devtools::install_github("gluc/ahp", build_vignettes = TRUE)
+Downloading GitHub repo gluc/ahp@HEAD
+√  checking for file 'C:\Users\pk052846\AppData\Local\Temp\RtmpkPIg0a\remotes41d07055276e\gluc-ahp-4a85f6e/DESCRIPTION' (476ms)
+-  preparing 'ahp':
+√  checking DESCRIPTION meta-information ... 
+-  installing the package to build vignettes
+√  creating vignettes (10.2s)
+-  checking for LF line-endings in source and make files and shell scripts
+-  checking for empty or unneeded directories
+-  building 'ahp_0.2.12.tar.gz'
+   
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+* installing *source* package 'ahp' ...
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+  converting help for package 'ahp'
+    finding HTML links ... done
+    AhpMatrix                               html  
+    Analyze                                 html  
+    finding level-2 HTML links ... done
+
+    Calculate                               html  
+    GetPairwiseFromFunction                 html  
+    Load                                    html  
+    PrioritiesFromPairwiseMatrixEigenvalues
+                                            html  
+    PrioritiesFromScoresDefault             html  
+    RunGUI                                  html  
+    Visualize                               html  
+    ahp                                     html  
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+*** arch - x64
+** testing if installed package can be loaded from final location
+*** arch - i386
+*** arch - x64
+** testing if installed package keeps a record of temporary installation path
+* DONE (ahp)
+> library(ahp)
+> library(data.tree)
+> AHPdata <- Load("~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab02/lodowkiAHP.yaml")
+> Calculate(AHPdata)
+> Visualize(AHPdata)
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+[1] "Node$fieldsAll will be deprecated in the next release. Please use Node$attributesAll instead."
+[1] "Node$fields will be deprecated in the next release. Please use Node$attributes instead."
+> Analyze(AHPdata)
+                                         Weight LG GSJ361DIDV LG GSJ761MCUZ Whirlpool WQ9 B2L
+1 Wybierz lodowke                        100.0%          9.9%          9.3%              8.1%
+2  ¦--Wydajnosc                           68.9%          6.5%          6.7%              6.4%
+3  ¦   ¦--pojemnosc_uzytkowa_chlodziarki  59.0%          5.5%          5.7%              5.4%
+4  ¦   °--pojemnosc_uzytkowa_zamrazarki    9.8%          1.0%          1.0%              1.0%
+5  ¦--Styl                                14.5%          1.0%          1.0%              1.0%
+6  ¦--Jakosc                              11.1%          1.9%          0.9%              0.2%
+7  °--Cena                                 5.5%          0.5%          0.6%              0.6%
+  Samsung RS50N3913BC Samsung RB29FERNCSS LG GBB61BLHMN Samsung RB38T603CS9 Whirlpool W4D7 XC2
+1                7.9%                7.4%          7.1%                6.6%               6.4%
+2                5.8%                3.2%          5.0%                4.4%               4.9%
+3                5.0%                2.7%          4.5%                3.8%               4.2%
+4                0.8%                0.5%          0.5%                0.6%               0.7%
+5                1.0%                1.0%          1.0%                1.0%               1.0%
+6                0.5%                3.0%          0.8%                0.9%               0.1%
+7                0.6%                0.2%          0.3%                0.4%               0.4%
+  Samsung RB34T672DBN LG GBB72MCDGN Whirlpool W7 821O K Haier 3-drzwiowa HTR5619ENMP Indesit LI8 S1E K
+1                5.8%          5.8%                5.7%                         5.5%              5.0%
+2                3.7%          4.3%                3.8%                         3.8%              3.7%
+3                3.2%          3.8%                3.3%                         3.2%              3.2%
+4                0.6%          0.5%                0.5%                         0.6%              0.5%
+5                1.0%          1.0%                0.9%                         1.0%              1.0%
+6                0.8%          0.1%                0.8%                         0.4%              0.2%
+7                0.3%          0.3%                0.2%                         0.4%              0.2%
+  Samsung RB29FWJNDBC Indesit LI7 SN1E X Inconsistency
+1                4.9%               4.6%         22.2%
+2                3.5%               3.2%          0.0%
+3                2.9%               2.7%          0.0%
+4                0.5%               0.5%          0.0%
+5                0.9%               1.0%          0.0%
+6                0.3%               0.2%          2.4%
+7                0.2%               0.2%          0.0%
+> AnalyzeTable(AHPdata)

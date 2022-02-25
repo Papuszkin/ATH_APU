@@ -1,0 +1,138 @@
+Version: 2.0
+
+Alternatives: &alternatives
+  Whirlpool WQ9 B2L:
+    pojemnosc_uzytkowa_chlodziarki: 388
+    pojemnosc_uzytkowa_zamrazarki: 206
+    cena: 4470.69
+    liczba_opinii: 27
+    ocena_klientow: 5
+  LG GBB72MCDGN:
+    pojemnosc_uzytkowa_chlodziarki: 277
+    pojemnosc_uzytkowa_zamrazarki: 107
+    cena: 2438.19
+    liczba_opinii: 10
+    ocena_klientow: 5
+  Indesit LI7 SN1E X:
+    pojemnosc_uzytkowa_chlodziarki: 197
+    pojemnosc_uzytkowa_zamrazarki: 98
+    cena: 1299.99
+    liczba_opinii: 30
+    ocena_klientow: 5
+  Whirlpool W7 821O K:
+    pojemnosc_uzytkowa_chlodziarki: 239
+    pojemnosc_uzytkowa_zamrazarki: 104
+    cena: 1747.14
+    liczba_opinii: 122
+    ocena_klientow: 4.5
+  Samsung RB38T603CS9:
+    pojemnosc_uzytkowa_chlodziarki: 276
+    pojemnosc_uzytkowa_zamrazarki: 114
+    cena: 2999
+    liczba_opinii: 146
+    ocena_klientow: 5
+  LG GSJ761MCUZ:
+    pojemnosc_uzytkowa_chlodziarki: 411
+    pojemnosc_uzytkowa_zamrazarki: 214
+    cena: 4633.29
+    liczba_opinii: 153
+    ocena_klientow: 5
+  LG GBB61BLHMN:
+    pojemnosc_uzytkowa_chlodziarki: 324
+    pojemnosc_uzytkowa_zamrazarki: 107
+    cena: 2031.69
+    liczba_opinii: 129
+    ocena_klientow: 5
+  Haier 3-drzwiowa HTR5619ENMP:
+    pojemnosc_uzytkowa_chlodziarki: 234
+    pojemnosc_uzytkowa_zamrazarki: 114
+    cena: 2925.99
+    liczba_opinii: 56
+    ocena_klientow: 5
+  Samsung RB29FWJNDBC:
+    pojemnosc_uzytkowa_chlodziarki: 212
+    pojemnosc_uzytkowa_zamrazarki: 108
+    cena: 1828.44
+    liczba_opinii: 46
+    ocena_klientow: 4.5
+  Samsung RS50N3913BC:
+    pojemnosc_uzytkowa_chlodziarki: 360
+    pojemnosc_uzytkowa_zamrazarki: 175
+    cena: 4470.69
+    liczba_opinii: 76
+    ocena_klientow: 5
+  Samsung RB29FERNCSS:
+    pojemnosc_uzytkowa_chlodziarki: 194
+    pojemnosc_uzytkowa_zamrazarki: 108
+    cena: 1787.79
+    liczba_opinii: 703
+    ocena_klientow: 5
+  LG GSJ361DIDV:
+    pojemnosc_uzytkowa_chlodziarki: 400
+    pojemnosc_uzytkowa_zamrazarki: 206
+    cena: 3901.59
+    liczba_opinii: 371
+    ocena_klientow: 5
+  Whirlpool W4D7 XC2:
+    pojemnosc_uzytkowa_chlodziarki: 302
+    pojemnosc_uzytkowa_zamrazarki: 150
+    cena: 2925.99
+    liczba_opinii: 13
+    ocena_klientow: 5
+  Indesit LI8 S1E K:
+    pojemnosc_uzytkowa_chlodziarki: 228
+    pojemnosc_uzytkowa_zamrazarki: 111
+    cena: 1259.34
+    liczba_opinii: 27
+    ocena_klientow: 5
+  Samsung RB34T672DBN:
+    pojemnosc_uzytkowa_chlodziarki: 230
+    pojemnosc_uzytkowa_zamrazarki: 114
+    cena: 1950.39
+    liczba_opinii: 126
+    ocena_klientow: 5
+
+Goal:
+  name: Wybierz lodowke
+  preferences:
+    pairwise:
+      - [Wydajnosc, Styl, 9]
+      - [Wydajnosc, Cena, 5]
+      - [Wydajnosc, Jakosc, 8]
+      - [Styl, Cena, 6]
+      - [Jakosc, Cena, 3]
+  children:
+    Wydajnosc:
+      preferences:
+        pairwise:
+          - [pojemnosc_uzytkowa_chlodziarki, pojemnosc_uzytkowa_zamrazarki, 6]
+      children:
+        pojemnosc_uzytkowa_chlodziarki:
+          preferences:
+            pairwiseFunction:
+              function(a1, a2) min(9, max(1/9, a1$pojemnosc_uzytkowa_chlodziarki / a2$pojemnosc_uzytkowa_chlodziarki))
+          children: *alternatives
+        pojemnosc_uzytkowa_zamrazarki:
+          preferences:
+            pairwiseFunction:
+              function(a1, a2) min(9, max(1/9, a1$pojemnosc_uzytkowa_zamrazarki / a2$pojemnosc_uzytkowa_zamrazarki))
+          children:
+              *alternatives
+    Jakosc:
+      preferences:
+        pairwiseFunction:
+          function(a1, a2) min(9, max(1/9, a1$liczba_opinii / a2$liczba_opinii))
+      children:
+          *alternatives
+    Styl:
+      preferences:
+        pairwiseFunction:
+          function(a1, a2) min(9, max(1/9, a1$ocena_klientow / a2$ocena_klientow))
+      children:
+          *alternatives
+    Cena:
+      preferences:
+        pairwiseFunction:
+          function(a1, a2) min(9, max(1/9, a1$cena / a2$cena))
+      children:
+        *alternatives
