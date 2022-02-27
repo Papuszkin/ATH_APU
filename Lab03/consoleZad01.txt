@@ -1,0 +1,379 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Workspace loaded from ~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab03/.RData]
+
+> setwd("~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab03")
+> 
+> install.packages("neuralnet")
+Error in install.packages : Updating loaded packages
+> library("neuralnet")
+> 
+> trainingInput <- as.data.frame(
++   matrix(
++     c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
++     nrow= 10,
++     ncol=1))
+> 
+> trainingOutput <- c(0, 1.386294, 2.197224, 2.772588, 3.218875, 3.583518, 3.891820, 4.158883, 4.394449, 4.605170)
+> 
+> maxs <- max(trainingInput)
+> mins <- min(trainingInput)
+> 
+> scaled.trainingInput <- as.data.frame(scale((trainingInput), center = mins, scale = maxs - mins))
+> 
+> print(head(scaled.trainingInput, 10))
+          V1
+1  0.0000000
+2  0.1111111
+3  0.2222222
+4  0.3333333
+5  0.4444444
+6  0.5555556
+7  0.6666667
+8  0.7777778
+9  0.8888889
+10 1.0000000
+> 
+> trainingData <- cbind(scaled.trainingInput, trainingOutput)
+> colnames(trainingData) <- c("In", "Out")
+> print(trainingData)
+          In      Out
+1  0.0000000 0.000000
+2  0.1111111 1.386294
+3  0.2222222 2.197224
+4  0.3333333 2.772588
+5  0.4444444 3.218875
+6  0.5555556 3.583518
+7  0.6666667 3.891820
+8  0.7777778 4.158883
+9  0.8888889 4.394449
+10 1.0000000 4.605170
+> 
+> net.mathAPR <- neuralnet(Out ~ In, trainingData, hidden = c(12, 5), threshold = 0.0001)
+> print(net.mathAPR)
+$call
+neuralnet(formula = Out ~ In, data = trainingData, hidden = c(12, 
+    5), threshold = 1e-04)
+
+$response
+        Out
+1  0.000000
+2  1.386294
+3  2.197224
+4  2.772588
+5  3.218875
+6  3.583518
+7  3.891820
+8  4.158883
+9  4.394449
+10 4.605170
+
+$covariate
+               
+ [1,] 0.0000000
+ [2,] 0.1111111
+ [3,] 0.2222222
+ [4,] 0.3333333
+ [5,] 0.4444444
+ [6,] 0.5555556
+ [7,] 0.6666667
+ [8,] 0.7777778
+ [9,] 0.8888889
+[10,] 1.0000000
+
+$model.list
+$model.list$response
+[1] "Out"
+
+$model.list$variables
+[1] "In"
+
+
+$err.fct
+function (x, y) 
+{
+    1/2 * (y - x)^2
+}
+<bytecode: 0x000001f8d54c8858>
+<environment: 0x000001f8d59f8208>
+attr(,"type")
+[1] "sse"
+
+$act.fct
+function (x) 
+{
+    1/(1 + exp(-x))
+}
+<bytecode: 0x000001f8d5223008>
+<environment: 0x000001f8d521fb08>
+attr(,"type")
+[1] "logistic"
+
+$linear.output
+[1] TRUE
+
+$data
+          In      Out
+1  0.0000000 0.000000
+2  0.1111111 1.386294
+3  0.2222222 2.197224
+4  0.3333333 2.772588
+5  0.4444444 3.218875
+6  0.5555556 3.583518
+7  0.6666667 3.891820
+8  0.7777778 4.158883
+9  0.8888889 4.394449
+10 1.0000000 4.605170
+
+$exclude
+NULL
+
+$net.result
+$net.result[[1]]
+               [,1]
+ [1,] -6.135376e-05
+ [2,]  1.386070e+00
+ [3,]  2.199913e+00
+ [4,]  2.767767e+00
+ [5,]  3.219239e+00
+ [6,]  3.587203e+00
+ [7,]  3.891326e+00
+ [8,]  4.156482e+00
+ [9,]  4.396723e+00
+[10,]  4.604120e+00
+
+
+$weights
+$weights[[1]]
+$weights[[1]][[1]]
+           [,1]      [,2]     [,3]      [,4]       [,5]     [,6]       [,7]      [,8]      [,9]     [,10]      [,11]
+[1,]  0.2823095  2.603467 0.626007  2.127581  0.3785384 1.120478 -0.4534661  -1.09822 -2.569139 -1.413995 -0.4731022
+[2,] -4.1279143 -2.287505 8.321398 39.532793 -3.1074633 3.118871 -9.5104744 -22.27034 -1.295153  3.132354  1.0917219
+          [,12]
+[1,] -0.5299912
+[2,]  3.1925770
+
+$weights[[1]][[2]]
+             [,1]        [,2]        [,3]        [,4]        [,5]
+ [1,]  0.32657090 -0.70848150  -0.4969877 -0.52901382 -1.24326567
+ [2,] -1.84035979 -1.36561776  18.2997239 -1.63114201 -1.54295575
+ [3,]  0.09439346 -0.15451373   1.1289244 -0.99878178 -0.64813400
+ [4,]  1.93919120  0.37328149   0.1992888  1.02396438  0.02375706
+ [5,]  1.18911790  0.87944747  -0.5565715 -0.50487997 -0.36453785
+ [6,] -1.22577773 -1.78819012  13.1504749 -0.26603297 -1.03685460
+ [7,]  0.12479937  1.85896999   1.1391996 -0.38240890  0.44978820
+ [8,] -3.70561590 -3.09583645  11.3085191 -1.41307119 -6.01246249
+ [9,] -1.25769506 -0.90661098 -17.3465817  0.03690775  0.48878588
+[10,]  0.48110115 -2.35100198   1.6417782 -0.27180735 -1.25259300
+[11,]  0.94922579 -0.04076887  -1.6034704  1.58583981  1.43977189
+[12,] -1.86078169  0.70302053  -0.2877044  1.23827931  1.59231326
+[13,]  0.50293819  0.77905982  -0.1765375  0.44174478  0.70383324
+
+$weights[[1]][[3]]
+           [,1]
+[1,] -0.2966710
+[2,]  2.3747353
+[3,]  0.4460833
+[4,] -0.5744258
+[5,]  1.2080915
+[6,]  1.9358904
+
+
+
+$generalized.weights
+$generalized.weights[[1]]
+               [,1]
+ [1,] -2.291683e+05
+ [2,] -1.760124e+01
+ [3,] -2.224185e+00
+ [4,] -9.210707e-01
+ [5,] -5.122645e-01
+ [6,] -3.222043e-01
+ [7,] -2.243855e-01
+ [8,] -1.731783e-01
+ [9,] -1.363152e-01
+[10,] -1.012640e-01
+
+
+$startweights
+$startweights[[1]]
+$startweights[[1]][[1]]
+           [,1]     [,2]      [,3]      [,4]       [,5]      [,6]      [,7]      [,8]       [,9]     [,10]    [,11]
+[1,] -0.4566812 1.809014 0.4500808 2.9063633  0.5577532  1.087603 -1.146431 0.4566295 -2.4118752 -1.732686 1.402966
+[2,] -1.4554836 1.798536 0.2663710 0.1783159 -0.8187418 -1.219456 -1.395948 0.5198779  0.6451223  1.834254 1.354334
+          [,12]
+[1,] -0.3642743
+[2,]  1.7914986
+
+$startweights[[1]][[2]]
+             [,1]        [,2]        [,3]         [,4]       [,5]
+ [1,]  0.09481297 -0.40582628 -0.44156792 -0.732653441 -1.4094103
+ [2,] -1.06849580  0.73951399  0.51019199 -0.624926857 -0.4292535
+ [3,] -0.17486494  0.14816814  1.35244834 -1.293101105 -0.8517801
+ [4,]  1.59062788 -0.31135804  0.57292032  0.697824924 -0.2485749
+ [5,]  0.95735271  1.15934550 -0.50115179 -0.708527229 -0.5306825
+ [6,] -1.36110149 -0.07234271 -0.36603112 -0.365236753 -1.1018398
+ [7,] -0.04778942  2.07900310  1.19562681 -0.548556105  0.2836420
+ [8,] -0.92192937 -1.10885074 -1.00849241 -0.008817346  0.3887299
+ [9,] -1.46288253  0.15320454 -3.08067433 -0.256312525  0.2896904
+[10,]  0.27605180 -0.57162832  0.27225049 -0.471421141 -1.4431343
+[11,] -0.20682127 -1.08471703 -0.06841282  0.443601758  0.2944442
+[12,] -2.13021200  0.73778576  0.16280546  0.920758520  1.3252858
+[13,] -0.18746357 -0.16017072  0.95547904 -0.702176799  0.2888605
+
+$startweights[[1]][[3]]
+           [,1]
+[1,] -0.5479122
+[2,]  1.6941577
+[3,]  0.1056404
+[4,] -0.3371834
+[5,]  0.4556691
+[6,]  1.1863238
+
+
+
+$result.matrix
+                                [,1]
+error                   2.826176e-05
+reached.threshold       9.714240e-05
+steps                   4.190000e+02
+Intercept.to.1layhid1   2.823095e-01
+In.to.1layhid1         -4.127914e+00
+Intercept.to.1layhid2   2.603467e+00
+In.to.1layhid2         -2.287505e+00
+Intercept.to.1layhid3   6.260070e-01
+In.to.1layhid3          8.321398e+00
+Intercept.to.1layhid4   2.127581e+00
+In.to.1layhid4          3.953279e+01
+Intercept.to.1layhid5   3.785384e-01
+In.to.1layhid5         -3.107463e+00
+Intercept.to.1layhid6   1.120478e+00
+In.to.1layhid6          3.118871e+00
+Intercept.to.1layhid7  -4.534661e-01
+In.to.1layhid7         -9.510474e+00
+Intercept.to.1layhid8  -1.098220e+00
+In.to.1layhid8         -2.227034e+01
+Intercept.to.1layhid9  -2.569139e+00
+In.to.1layhid9         -1.295153e+00
+Intercept.to.1layhid10 -1.413995e+00
+In.to.1layhid10         3.132354e+00
+Intercept.to.1layhid11 -4.731022e-01
+In.to.1layhid11         1.091722e+00
+Intercept.to.1layhid12 -5.299912e-01
+In.to.1layhid12         3.192577e+00
+Intercept.to.2layhid1   3.265709e-01
+1layhid1.to.2layhid1   -1.840360e+00
+1layhid2.to.2layhid1    9.439346e-02
+1layhid3.to.2layhid1    1.939191e+00
+1layhid4.to.2layhid1    1.189118e+00
+1layhid5.to.2layhid1   -1.225778e+00
+1layhid6.to.2layhid1    1.247994e-01
+1layhid7.to.2layhid1   -3.705616e+00
+1layhid8.to.2layhid1   -1.257695e+00
+1layhid9.to.2layhid1    4.811011e-01
+1layhid10.to.2layhid1   9.492258e-01
+1layhid11.to.2layhid1  -1.860782e+00
+1layhid12.to.2layhid1   5.029382e-01
+Intercept.to.2layhid2  -7.084815e-01
+1layhid1.to.2layhid2   -1.365618e+00
+1layhid2.to.2layhid2   -1.545137e-01
+1layhid3.to.2layhid2    3.732815e-01
+1layhid4.to.2layhid2    8.794475e-01
+1layhid5.to.2layhid2   -1.788190e+00
+1layhid6.to.2layhid2    1.858970e+00
+1layhid7.to.2layhid2   -3.095836e+00
+1layhid8.to.2layhid2   -9.066110e-01
+1layhid9.to.2layhid2   -2.351002e+00
+1layhid10.to.2layhid2  -4.076887e-02
+1layhid11.to.2layhid2   7.030205e-01
+1layhid12.to.2layhid2   7.790598e-01
+Intercept.to.2layhid3  -4.969877e-01
+1layhid1.to.2layhid3    1.829972e+01
+1layhid2.to.2layhid3    1.128924e+00
+1layhid3.to.2layhid3    1.992888e-01
+1layhid4.to.2layhid3   -5.565715e-01
+1layhid5.to.2layhid3    1.315047e+01
+1layhid6.to.2layhid3    1.139200e+00
+1layhid7.to.2layhid3    1.130852e+01
+1layhid8.to.2layhid3   -1.734658e+01
+1layhid9.to.2layhid3    1.641778e+00
+1layhid10.to.2layhid3  -1.603470e+00
+1layhid11.to.2layhid3  -2.877044e-01
+1layhid12.to.2layhid3  -1.765375e-01
+Intercept.to.2layhid4  -5.290138e-01
+1layhid1.to.2layhid4   -1.631142e+00
+1layhid2.to.2layhid4   -9.987818e-01
+1layhid3.to.2layhid4    1.023964e+00
+1layhid4.to.2layhid4   -5.048800e-01
+1layhid5.to.2layhid4   -2.660330e-01
+1layhid6.to.2layhid4   -3.824089e-01
+1layhid7.to.2layhid4   -1.413071e+00
+1layhid8.to.2layhid4    3.690775e-02
+1layhid9.to.2layhid4   -2.718074e-01
+1layhid10.to.2layhid4   1.585840e+00
+1layhid11.to.2layhid4   1.238279e+00
+1layhid12.to.2layhid4   4.417448e-01
+Intercept.to.2layhid5  -1.243266e+00
+1layhid1.to.2layhid5   -1.542956e+00
+1layhid2.to.2layhid5   -6.481340e-01
+1layhid3.to.2layhid5    2.375706e-02
+1layhid4.to.2layhid5   -3.645378e-01
+1layhid5.to.2layhid5   -1.036855e+00
+1layhid6.to.2layhid5    4.497882e-01
+1layhid7.to.2layhid5   -6.012462e+00
+1layhid8.to.2layhid5    4.887859e-01
+1layhid9.to.2layhid5   -1.252593e+00
+1layhid10.to.2layhid5   1.439772e+00
+1layhid11.to.2layhid5   1.592313e+00
+1layhid12.to.2layhid5   7.038332e-01
+Intercept.to.Out       -2.966710e-01
+2layhid1.to.Out         2.374735e+00
+2layhid2.to.Out         4.460833e-01
+2layhid3.to.Out        -5.744258e-01
+2layhid4.to.Out         1.208092e+00
+2layhid5.to.Out         1.935890e+00
+
+attr(,"class")
+[1] "nn"
+> 
+> plot(net.mathAPR)
+> 
+> testData <- as.data.frame(matrix(
++   c(8, 9, 10, 11, 12),
++   nrow = 6,
++   ncol = 1
++ ))
+Warning message:
+In matrix(c(8, 9, 10, 11, 12), nrow = 6, ncol = 1) :
+  data length [5] is not a sub-multiple or multiple of the number of rows [6]
+> 
+> scaled.testData <- as.data.frame(scale(testData, center = mins, scale = maxs - mins))
+> 
+> net.results <- compute(net.mathAPR, scaled.testData)
+> 
+> ls(net.results)
+[1] "net.result" "neurons"   
+> 
+> print(net.results$net.result)
+         [,1]
+[1,] 4.156482
+[2,] 4.396723
+[3,] 4.604120
+[4,] 4.768783
+[5,] 4.892620
+[6,] 4.156482
