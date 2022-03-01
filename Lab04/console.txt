@@ -1,0 +1,102 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Workspace loaded from ~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab04/.RData]
+
+> setwd("~/Studia/Magister/Semestr I/Analiza Procesów Uczenia/Lab04")
+> 
+> install.packages("C50")
+Instalowanie pakietu w ‘C:/Users/pk052846/Documents/R/win-library/4.1’
+(ponieważ ‘lib’ nie jest określony)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/C50_0.1.6.zip'
+Content type 'application/zip' length 476605 bytes (465 KB)
+downloaded 465 KB
+
+package ‘C50’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\pk052846\AppData\Local\Temp\RtmpYRkrpF\downloaded_packages
+> require("C50")
+Ładowanie wymaganego pakietu: C50
+> 
+> lodowki <- read.csv("lodowki.csv")
+> 
+> lodowki <- lodowki[, 2:8]
+> lodowki[, 6] <- factor(lodowki[, 6])
+> lodowki[, 7] <- factor(lodowki[, 7])
+> 
+> model <- C5.0(lodowki[, -7], lodowki[, 7])
+> 
+> plot(model)
+> 
+> model
+
+Call:
+C5.0.default(x = lodowki[, -7], y = lodowki[, 7])
+
+Classification Tree
+Number of samples: 15 
+Number of predictors: 6 
+
+Tree size: 3 
+
+Non-standard options: attempt to group attributes
+
+> 
+> summary(model)
+
+Call:
+C5.0.default(x = lodowki[, -7], y = lodowki[, 7])
+
+
+C5.0 [Release 2.07 GPL Edition]  	Tue Mar 01 18:57:47 2022
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 15 cases (7 attributes) from undefined.data
+
+Decision tree:
+
+liczba_opinii > 76: wiecej niż 100 opinii (7)
+liczba_opinii <= 76:
+:...liczba_opinii <= 46: mniej niż 50 opinii (6)
+    liczba_opinii > 46: między 50-100 opinii (2)
+
+
+Evaluation on training data (15 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	     3    0( 0.0%)   <<
+
+
+	   (a)   (b)   (c)    <-classified as
+	  ----  ----  ----
+	     2                (a): class między 50-100 opinii
+	           6          (b): class mniej niż 50 opinii
+	                 7    (c): class wiecej niż 100 opinii
+
+
+	Attribute usage:
+
+	100.00%	liczba_opinii
+
+
+Time: 0.0 secs
